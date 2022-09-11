@@ -15,6 +15,7 @@
     "react": "18.2.0",
     "react-animated-numbers": "^0.14.0",
     "react-dom": "18.2.0",
+    "reconnecting-websocket": "^4.4.0",
     "trakteerjs": "^1.0.6"
   },
   "devDependencies": {
