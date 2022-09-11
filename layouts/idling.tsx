@@ -1,9 +1,9 @@
 import Head from "next/head";
 import Image from "next/image";
-import BottomRoadMask from "../assets/img/idling/bottom-road-mask.png";
-import CactusLeft from "../assets/img/idling/cactus-left.png";
-import CactusRight from "../assets/img/idling/cactus-right.png";
-import Cloud from "../assets/img/idling/cloud.png";
+import BottomRoadMask from "../assets/img/bottom-road-mask.png";
+import CactusLeft from "../assets/img/cactus-left.png";
+import CactusRight from "../assets/img/cactus-right.png";
+import Cloud from "../assets/img/cloud.png";
 
 interface IdlingProp {
   children: React.ReactNode;
