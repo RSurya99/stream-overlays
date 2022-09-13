@@ -60,8 +60,9 @@ const Starting: NextPage<Props> = (props) => {
     <Layout pageTitle="End Scene">
       <div className="w-full h-full flex flex-col items-center justify-center text-center text-primary-black">
         <h1 className="text-8xl font-bold mb-4 uppercase">
-          <span>{minutes}:{seconds}</span>
-          <br />
+          {minutes}:{seconds}
+        </h1>
+        <h1 className="text-8xl font-bold mb-4 uppercase">
           Starting Soon
         </h1>
         <p className="text-4xl capitalize">{latestStream?.Title.title[0].plain_text}</p>
