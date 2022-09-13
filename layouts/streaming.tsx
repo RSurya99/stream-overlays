@@ -1,7 +1,7 @@
 import Head from "next/head";
 import Image from "next/image";
 import Cloud from "../assets/img/cloud.png";
-import Textures from "../assets/img/textures.png";
+import Textures from "../assets/img/textures-long.png";
 
 interface IdlingProp {
   children: React.ReactNode;
@@ -20,7 +20,7 @@ const Streaming = (props: IdlingProp) => {
 
       <div className="relative w-[1920px] h-[1080px] bg-primary-black font-sans antialiased overflow-hidden">
         <div className="relative w-full h-full z-10">{children}</div>
-        <div className="absolute top-0 right-[370px]">
+        <div className="absolute top-0 right-[370px] animate-[cloudMove_3s_ease_infinite]">
           <Image
             src={Cloud}
             alt="Cloud Right"
@@ -30,7 +30,7 @@ const Streaming = (props: IdlingProp) => {
             height={129}
           />
         </div>
-        <div className="absolute top-[28px] left-[470px]">
+        <div className="absolute top-[28px] left-[470px] animate-cloudMove">
           <Image
             src={Cloud}
             alt="Cloud Left"
@@ -40,7 +40,7 @@ const Streaming = (props: IdlingProp) => {
             height={75}
           />
         </div>
-        <div className="absolute top-28 left-0">
+        <div className="absolute top-28 left-0 animate-marqueeTexture">
           <Image
             src={Textures}
             alt="Textures"
