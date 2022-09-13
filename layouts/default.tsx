@@ -1,12 +1,12 @@
-import Head from "next/head";
+import Head from "next/head"
 
 interface IdlingProp {
-  children: React.ReactNode;
-  pageTitle: string;
+  children: React.ReactNode
+  pageTitle: string
 }
 
 const Test = (props: IdlingProp) => {
-  const { children, pageTitle } = props;
+  const { children, pageTitle } = props
   return (
     <>
       <Head>
@@ -19,7 +19,7 @@ const Test = (props: IdlingProp) => {
         <div className="w-full h-full">{children}</div>
       </div>
     </>
-  );
-};
+  )
+}
 
-export default Test;
+export default Test

@@ -1,18 +1,18 @@
-import Head from "next/head";
-import Image from "next/image";
-import BottomRoadMask from "../assets/img/bottom-road-mask-long-with-cactus.png";
-import CactusLeft from "../assets/img/cactus-left.png";
-import CactusRight from "../assets/img/cactus-right.png";
-import Bird from "../assets/img/bird.png";
-import Cloud from "../assets/img/cloud.png";
+import Head from "next/head"
+import Image from "next/image"
+import BottomRoadMask from "../assets/img/bottom-road-mask-long-with-cactus.png"
+import CactusLeft from "../assets/img/cactus-left.png"
+import CactusRight from "../assets/img/cactus-right.png"
+import Bird from "../assets/img/bird.png"
+import Cloud from "../assets/img/cloud.png"
 
 interface IdlingProp {
-  children: React.ReactNode;
-  pageTitle: string;
+  children: React.ReactNode
+  pageTitle: string
 }
 
 const Idling = (props: IdlingProp) => {
-  const { children, pageTitle } = props;
+  const { children, pageTitle } = props
   return (
     <>
       <Head>
@@ -60,7 +60,7 @@ const Idling = (props: IdlingProp) => {
         </div>
       </div>
     </>
-  );
-};
+  )
+}
 
-export default Idling;
+export default Idling

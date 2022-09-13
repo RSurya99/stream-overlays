@@ -1,15 +1,15 @@
-import Head from "next/head";
-import Image from "next/image";
-import Cloud from "../assets/img/cloud.png";
-import Textures from "../assets/img/textures-long.png";
+import Head from "next/head"
+import Image from "next/image"
+import Cloud from "../assets/img/cloud.png"
+import Textures from "../assets/img/textures-long.png"
 
 interface IdlingProp {
-  children: React.ReactNode;
-  pageTitle: string;
+  children: React.ReactNode
+  pageTitle: string
 }
 
 const Streaming = (props: IdlingProp) => {
-  const { children, pageTitle } = props;
+  const { children, pageTitle } = props
   return (
     <>
       <Head>
@@ -50,7 +50,7 @@ const Streaming = (props: IdlingProp) => {
         </div>
       </div>
     </>
-  );
-};
+  )
+}
 
-export default Streaming;
+export default Streaming

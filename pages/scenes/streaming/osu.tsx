@@ -1,9 +1,9 @@
-import type { NextPage } from "next";
-import Image from "next/image";
-import { useState, useEffect } from 'react';
-import Layout from "../../../layouts/streaming";
+import type { NextPage } from "next"
+import Image from "next/image"
+import { useState, useEffect } from 'react'
+import Layout from "../../../layouts/streaming"
 import Dino from '../../../assets/img/dino.png'
-import { useGosumemory } from "../../../lib/gosumemory";
+import { useGosumemory } from "../../../lib/gosumemory"
 import { getLatestStreams } from '../../../lib/notion'
 import NumberEasing from 'react-number-easing'
 
@@ -13,7 +13,7 @@ interface Props {
 
 export async function getServerSideProps() {
   // Get the getLatestStreams
-  let { results } = await getLatestStreams();
+  let { results } = await getLatestStreams()
   // Return the result
   return {
     props: {
@@ -23,11 +23,11 @@ export async function getServerSideProps() {
 }
 
 const Osu: NextPage<Props> = (props) => {
-  const [ gameplayData, menu ] = useGosumemory();
-  const [latestStream, setLatestStream] = useState();
+  const [ gameplayData, menu ] = useGosumemory()
+  const [latestStream, setLatestStream] = useState()
 
   useEffect(() => {
-    const { properties } = props.getLatestStreams[0];
+    const { properties } = props.getLatestStreams[0]
     setLatestStream(properties)
   }, [props.getLatestStreams, latestStream])
 
@@ -118,7 +118,7 @@ const Osu: NextPage<Props> = (props) => {
         </section>
       </div>
     </Layout>
-  );
-};
+  )
+}
 
-export default Osu;
+export default Osu

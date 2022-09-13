@@ -1,8 +1,8 @@
-import {Client} from '@notionhq/client';
+import {Client} from '@notionhq/client'
 
 const client = new Client({
   auth: process.env.NOTION_API_KEY,
-});
+})
 
 export async function getLatestStreams() {
   const streamDetails: any = await client.databases.query({
@@ -20,6 +20,6 @@ export async function getLatestStreams() {
       },
     ],
     page_size: 1,
-  });
-  return streamDetails;
+  })
+  return streamDetails
 }
