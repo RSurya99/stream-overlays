@@ -5,6 +5,7 @@ import Layout from "../../../layouts/streaming";
 import Dino from '../../../assets/img/dino.png'
 import { useGosumemory } from "../../../lib/gosumemory";
 import { getLatestStreams } from '../../../lib/notion'
+import NumberEasing from 'react-number-easing'
 
 interface Props {
   getLatestStreams: [any]
@@ -63,20 +64,42 @@ const Osu: NextPage<Props> = (props) => {
               <div className="w-[330px] h-[55px] bg-[#0E0E0E] flex justify-center space-x-10 bg-opacity-75 border-2 border-primary-white rounded-[2rem] py-2 text-center shadow-md">
                 <div className="text-sm">
                   <h5>100</h5>
-                  <span>{gameplayData?.hits['100']}</span>
+                  <NumberEasing
+                    value={gameplayData?.hits['100']}
+                    speed={300}
+                    decimals={0}
+                    ease='quintInOut' />
                 </div>
                 <div className="text-sm">
                   <h5>50</h5>
-                  <span>{gameplayData?.hits['50']}</span>
+                  <NumberEasing
+                    value={gameplayData?.hits['50']}
+                    speed={300}
+                    decimals={0}
+                    ease='quintInOut' />
                 </div>
                 <div className="text-sm">
                   <h5>Miss</h5>
-                  <span>{gameplayData?.hits['0']}</span>
+                  <NumberEasing
+                    value={gameplayData?.hits['0']}
+                    speed={300}
+                    decimals={0}
+                    ease='quintInOut' />
                 </div>
               </div>
               <div className="w-[310px] h-[55px] bg-[#0E0E0E] bg-opacity-75 border-2 border-primary-white rounded-[2rem] py-5 flex items-center justify-center shadow-md">
                 <span>
-                  {gameplayData?.pp.current}pp/{gameplayData?.pp.fc}pp
+                  <NumberEasing
+                    value={gameplayData?.pp.current}
+                    speed={250}
+                    decimals={0}
+                    ease='quintInOut' />pp/
+                  <NumberEasing
+                    value={gameplayData?.pp.fc}
+                    speed={250}
+                    decimals={0}
+                    ease='quintInOut' />pp
+                  {/* {gameplayData?.pp.current}pp/{gameplayData?.pp.fc}pp */}
                 </span>
               </div>
             </div>
