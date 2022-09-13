@@ -11,7 +11,7 @@ export function useGosumemory() {
 
   React.useEffect(() => {
     const socket = new ReconnectingWebSocket("ws://127.0.0.1:24050/")
-    socket.onopen = () => console.log("Successfully Connected")
+    // socket.onopen = () => console.log("Successfully Connected")
 
     socket.onclose = (event) => {
       // console.log("Socket Closed Connection: ", event)
@@ -20,7 +20,10 @@ export function useGosumemory() {
 
     socket.onmessage = (event) => {
       try {
-        let data = JSON.parse(event.data)
+        let data: any
+        if(event.data){          
+          data = JSON.parse(event.data)
+        }
         setGameplayData(data.gameplay)
         setMenu(data.menu)
       } catch (err) {
