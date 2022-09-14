@@ -1,4 +1,4 @@
-import type { NextPage } from "next";
+import type { NextPage } from "next"
 import Link from 'next/link'
 
 const End: NextPage = () => {
@@ -11,7 +11,7 @@ const End: NextPage = () => {
         <a className="px-5 py-3 bg-primary-white rounded-sm text-primary-black text-2xl capitalize">Go Back Home</a>
       </Link>
     </div>
-  );
-};
+  )
+}
 
-export default End;
+export default End

@@ -33,7 +33,7 @@ const Brb: NextPage<Props> = (props) => {
         <p className="text-4xl capitalize">{latestStream?.Title.title[0].plain_text}</p>
       </div>
     </Layout>
-  );
-};
+  )
+}
 
 export default Brb

@@ -1,5 +1,5 @@
-import type { NextPage } from "next";
-import Layout from "../../../layouts/idling";
+import type { NextPage } from "next"
+import Layout from "../../../layouts/idling"
 
 const End: NextPage = () => {
   return (
@@ -11,7 +11,7 @@ const End: NextPage = () => {
         <p className="text-4xl capitalize">See You Next Time</p>
       </div>
     </Layout>
-  );
-};
+  )
+}
 
-export default End;
+export default End
