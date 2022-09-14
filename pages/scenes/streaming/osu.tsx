@@ -5,7 +5,6 @@ import Layout from "../../../layouts/streaming"
 import Dino from '../../../assets/img/dino.png'
 import { useGosumemory } from "../../../lib/gosumemory"
 import { getLatestStreams } from '../../../lib/notion'
-import AnimatedNumber from 'react-animated-number'
 
 interface Props {
   getLatestStreams: [any]
@@ -68,56 +67,21 @@ const Osu: NextPage<Props> = (props) => {
               <div className="w-[330px] h-[55px] bg-[#0E0E0E] flex justify-center space-x-10 bg-opacity-75 border-2 border-primary-white rounded-[2rem] py-2 text-center shadow-md">
                 <div className="text-sm">
                   <h5>100</h5>
-                  <AnimatedNumber
-                    value={gameplayData?.hits['100'] || 0}
-                    style={{
-                      transition: '0.3s ease-out',
-                    }}
-                    formatValue={n => n.toFixed(0)}
-                    frameStyle={percentage => percentage > 20 && percentage < 80 ? { opacity: 0.5 } : {}}
-                  />
+                  <span>{gameplayData?.hits['100'] || 0}</span>
                 </div>
                 <div className="text-sm">
                   <h5>50</h5>
-                  <AnimatedNumber
-                    value={gameplayData?.hits['50'] || 0}
-                    style={{
-                      transition: '0.3s ease-out',
-                    }}
-                    formatValue={n => n.toFixed(0)}
-                    frameStyle={percentage => percentage > 20 && percentage < 80 ? { opacity: 0.5 } : {}}
-                  />
+                  <span>{gameplayData?.hits['50'] || 0}</span>
                 </div>
                 <div className="text-sm">
                   <h5>Miss</h5>
-                  <AnimatedNumber
-                    value={gameplayData?.hits['0'] || 0}
-                    style={{
-                      transition: '0.3s ease-out',
-                    }}
-                    formatValue={n => n.toFixed(0)}
-                    frameStyle={percentage => percentage > 20 && percentage < 80 ? { opacity: 0.5 } : {}}
-                  />
+                  <span>{gameplayData?.hits['0'] || 0}</span>
                 </div>
               </div>
               <div className="w-[310px] h-[55px] bg-[#0E0E0E] bg-opacity-75 border-2 border-primary-white rounded-[2rem] py-5 flex items-center justify-center shadow-md">
                 <span>
-                  <AnimatedNumber
-                    value={gameplayData?.pp.current || 0}
-                    style={{
-                      transition: '0.3s ease-out',
-                    }}
-                    formatValue={n => n.toFixed(0)}
-                    frameStyle={percentage => percentage > 20 && percentage < 80 ? { opacity: 0.5 } : {}}
-                  />pp/
-                  <AnimatedNumber
-                    value={gameplayData?.pp.fc || 0}
-                    style={{
-                      transition: '0.3s ease-out',
-                    }}
-                    formatValue={n => n.toFixed(0)}
-                    frameStyle={percentage => percentage > 20 && percentage < 80 ? { opacity: 0.5 } : {}}
-                  />pp
+                  {gameplayData?.pp.current || 0}pp/
+                  {gameplayData?.pp.fc || 0}pp
                 </span>
               </div>
             </div>
