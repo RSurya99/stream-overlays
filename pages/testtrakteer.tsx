@@ -1,11 +1,11 @@
 import type { NextPage } from "next"
 import Head from "next/head"
 import { useEffect } from 'react'
-import { useTrakteerWebsocket } from "../lib/trakteer"
+// import { useTrakteerWebsocket } from "../lib/trakteer"
 
-interface Props {
-  getLatestStreams: [any]
-}
+// interface Props {
+//   getLatestStreams: [any]
+// }
 
 // export async function getStaticProps() {
 //   const result = await getTrakteerWebsocket()
@@ -16,12 +16,12 @@ interface Props {
 //   }
 // }
 
-const Test: NextPage = async (props) => {
-  const { donation, leaderboard, goal, supporter } = await useTrakteerWebsocket()
+const Test: NextPage = () => {
+  // const { donation, leaderboard, goal, supporter } = await useTrakteerWebsocket()
 
   useEffect(() => {
     console.log('called')
-    console.log('result', result)
+    // console.log('result', result)
   }, [])
   return (
     <div>

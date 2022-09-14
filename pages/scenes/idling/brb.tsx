@@ -19,7 +19,7 @@ export async function getServerSideProps() {
 }
 
 const Brb: NextPage<Props> = (props) => {
-  const [latestStream, setLatestStream] = useState()
+  const [latestStream, setLatestStream] = useState<any>()
 
   useEffect(() => {
     const { properties } = props.getLatestStreams[0]

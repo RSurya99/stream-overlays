@@ -1,7 +1,7 @@
 import { Client } from 'trakteerjs'
 import * as React from "react"
 
-const pageId: string | undefined = process.env.TRAKTEER_PAGE_ID
+const pageId: string = process.env.TRAKTEER_PAGE_ID || '-'
 const streamKey: `trstream-${string}` = `trstream-${process.env.TRAKTEER_STREAM_KEY || '---'}`
 const client = new Client(pageId, streamKey)
 
@@ -180,5 +180,6 @@ export function useTrakteerWebsocket(){
 //       */
 //   })
   
-  return { donation, leaderboard, goal, supporter }
+  // return { donation, leaderboard, goal, supporter }
+  return {}
 }

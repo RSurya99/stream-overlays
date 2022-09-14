@@ -23,7 +23,7 @@ export async function getServerSideProps() {
 
 const Osu: NextPage<Props> = (props) => {
   const [ gameplayData, menu ] = useGosumemory()
-  const [latestStream, setLatestStream] = useState()
+  const [latestStream, setLatestStream] = useState<any>()
 
   useEffect(() => {
     const { properties } = props.getLatestStreams[0]
