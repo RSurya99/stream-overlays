@@ -5,7 +5,7 @@ import Layout from "../../../layouts/streaming"
 import Dino from '../../../assets/img/dino.png'
 import { useGosumemory } from "../../../lib/gosumemory"
 import { getLatestStreams } from '../../../lib/notion'
-import NumberEasing from 'react-number-easing'
+import AnimatedNumber from 'react-animated-number'
 
 interface Props {
   getLatestStreams: [any]
@@ -58,48 +58,66 @@ const Osu: NextPage<Props> = (props) => {
           <h1 className="text-[72px]">RSURYA99</h1>
           <div className="detail">
             <div className="relative w-[650px] h-[55px] bg-[#0E0E0E] bg-opacity-75 border-2 border-primary-white rounded-[2rem] flex items-center justify-center text-center shadow-md overflow-hidden">
-              <span className="whitespace-nowrap text-sm animate-marquee">Now Playing {menu?.bm.metadata.artist} - {menu?.bm.metadata.title} [{menu?.bm.metadata.difficulty}]</span>
+              {menu ? (
+                <span className="whitespace-nowrap text-sm animate-marquee">Now Playing {menu?.bm.metadata.artist} - {menu?.bm.metadata.title} [{menu?.bm.metadata.difficulty}]</span>
+              ) : (
+                <span className="whitespace-nowrap text-sm text-center">Idling</span>
+              )}
             </div>
             <div className="flex justify-between mt-2">
               <div className="w-[330px] h-[55px] bg-[#0E0E0E] flex justify-center space-x-10 bg-opacity-75 border-2 border-primary-white rounded-[2rem] py-2 text-center shadow-md">
                 <div className="text-sm">
                   <h5>100</h5>
-                  <NumberEasing
-                    value={gameplayData?.hits['100']}
-                    speed={300}
-                    decimals={0}
-                    ease='quintInOut' />
+                  <AnimatedNumber
+                    value={gameplayData?.hits['100'] || 0}
+                    style={{
+                      transition: '0.3s ease-out',
+                    }}
+                    formatValue={n => n.toFixed(0)}
+                    frameStyle={percentage => percentage > 20 && percentage < 80 ? { opacity: 0.5 } : {}}
+                  />
                 </div>
                 <div className="text-sm">
                   <h5>50</h5>
-                  <NumberEasing
-                    value={gameplayData?.hits['50']}
-                    speed={300}
-                    decimals={0}
-                    ease='quintInOut' />
+                  <AnimatedNumber
+                    value={gameplayData?.hits['50'] || 0}
+                    style={{
+                      transition: '0.3s ease-out',
+                    }}
+                    formatValue={n => n.toFixed(0)}
+                    frameStyle={percentage => percentage > 20 && percentage < 80 ? { opacity: 0.5 } : {}}
+                  />
                 </div>
                 <div className="text-sm">
                   <h5>Miss</h5>
-                  <NumberEasing
-                    value={gameplayData?.hits['0']}
-                    speed={300}
-                    decimals={0}
-                    ease='quintInOut' />
+                  <AnimatedNumber
+                    value={gameplayData?.hits['0'] || 0}
+                    style={{
+                      transition: '0.3s ease-out',
+                    }}
+                    formatValue={n => n.toFixed(0)}
+                    frameStyle={percentage => percentage > 20 && percentage < 80 ? { opacity: 0.5 } : {}}
+                  />
                 </div>
               </div>
               <div className="w-[310px] h-[55px] bg-[#0E0E0E] bg-opacity-75 border-2 border-primary-white rounded-[2rem] py-5 flex items-center justify-center shadow-md">
                 <span>
-                  <NumberEasing
-                    value={gameplayData?.pp.current}
-                    speed={250}
-                    decimals={0}
-                    ease='quintInOut' />pp/
-                  <NumberEasing
-                    value={gameplayData?.pp.fc}
-                    speed={250}
-                    decimals={0}
-                    ease='quintInOut' />pp
-                  {/* {gameplayData?.pp.current}pp/{gameplayData?.pp.fc}pp */}
+                  <AnimatedNumber
+                    value={gameplayData?.pp.current || 0}
+                    style={{
+                      transition: '0.3s ease-out',
+                    }}
+                    formatValue={n => n.toFixed(0)}
+                    frameStyle={percentage => percentage > 20 && percentage < 80 ? { opacity: 0.5 } : {}}
+                  />pp/
+                  <AnimatedNumber
+                    value={gameplayData?.pp.fc || 0}
+                    style={{
+                      transition: '0.3s ease-out',
+                    }}
+                    formatValue={n => n.toFixed(0)}
+                    frameStyle={percentage => percentage > 20 && percentage < 80 ? { opacity: 0.5 } : {}}
+                  />pp
                 </span>
               </div>
             </div>
