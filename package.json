@@ -16,7 +16,8 @@
     "react-dom": "18.2.0",
     "react-number-easing": "^1.0.2",
     "reconnecting-websocket": "^4.4.0",
-    "trakteerjs": "^1.0.6"
+    "trakteerjs": "^1.0.6",
+    "uuid": "^9.0.0"
   },
   "devDependencies": {
     "@types/node": "18.7.16",
