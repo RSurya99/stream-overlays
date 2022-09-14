@@ -20,7 +20,7 @@ export async function getServerSideProps() {
   }
 }
 
-const Osu: NextPage<Props> = (props) => {
+const General: NextPage<Props> = (props) => {
   const [latestStream, setLatestStream] = useState()
 
   useEffect(() => {
@@ -83,4 +83,4 @@ const Osu: NextPage<Props> = (props) => {
   )
 }
 
-export default Osu
+export default General
