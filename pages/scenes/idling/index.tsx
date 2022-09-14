@@ -3,8 +3,14 @@ import Link from 'next/link'
 import { useState } from 'react'
 import { v4 as uuidv4 } from 'uuid';
 
+interface Scene {
+  id: string
+  name: string
+  path: string
+}
+
 const Idling: NextPage = () => {
-  const [idlingScenes, setIdlingScenes] = useState([
+  const [idlingScenes, setIdlingScenes] = useState<Scene[]>([
     {
       id: uuidv4(),
       name: 'Starting',

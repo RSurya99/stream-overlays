@@ -19,9 +19,9 @@ export async function getServerSideProps() {
 }
 
 const Starting: NextPage<Props> = (props) => {
-  const [countDown, setCountDown] = useState(0)
+  const [countDown, setCountDown] = useState<number>(0)
   const [runTimer, setRunTimer] = useState<boolean | Function>((t: string) => !t)
-  const [latestStream, setLatestStream] = useState()
+  const [latestStream, setLatestStream] = useState<any>()
 
   useEffect(() => {
     const { properties } = props.getLatestStreams[0]
