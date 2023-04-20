@@ -1,7 +1,7 @@
 import Head from "next/head"
 import Image from "next/image"
 import Cloud from "../assets/img/cloud.png"
-import Textures from "../assets/img/textures.png"
+import Textures from "../assets/img/textures-long.png"
 
 interface IdlingProp {
   children: React.ReactNode
@@ -30,7 +30,7 @@ const Facecam = (props: IdlingProp) => {
             height={75}
           />
         </div>
-        <div className="absolute top-24 left-16">
+        <div className="absolute top-24 left-16 animate-marqueeTexture">
           <Image
             src={Textures}
             alt="Textures"
