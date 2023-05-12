@@ -1,10 +1,10 @@
 import type { NextPage } from "next"
 import Image from "next/image"
 import { useState, useEffect } from 'react'
-import Layout from "../../../layouts/streaming"
-import Dino from '../../../assets/img/dino.png'
-import { useGosumemory } from "../../../lib/gosumemory"
-import { getLatestStreams } from '../../../lib/notion'
+import Layout from "~/layouts/streaming-potrait"
+import Dino from '~/assets/img/dino.png'
+import { useGosumemory } from "~/lib/gosumemory"
+import { getLatestStreams } from '~/lib/notion'
 
 interface Props {
   getLatestStreams: [any]
@@ -21,7 +21,7 @@ export async function getServerSideProps() {
   }
 }
 
-const Osu: NextPage<Props> = (props) => {
+const PotraitOsu: NextPage<Props> = (props) => {
   const [ gameplayData, menu ] = useGosumemory()
   const [latestStream, setLatestStream] = useState<any>()
 
@@ -31,29 +31,43 @@ const Osu: NextPage<Props> = (props) => {
   }, [props.getLatestStreams, latestStream])
 
   return (
-    <Layout pageTitle="Osu! Scene">
+    <Layout pageTitle="Osu! Potrait Scene">
       <div className="w-full h-full  text-primary-white">
-        <div className="flex ml-12 mt-20">
-          <div className="inline-block w-[1450px] h-[821px] bg-[#00ff00] border-2 border-white rounded-[1.5rem] shadow-xl">
-            <div className="relative">
-              <div className="absolute top-[2px] left-[2px] z-10 w-[444.54px] h-[50px] bg-primary-white text-primary-black rounded-[2rem] border border-primary-black -translate-y-8 ml-16 flex items-center justify-center">
-                <span>{latestStream?.Title.title[0].plain_text}</span>
-              </div>
-              <div className="w-[449px] h-[54px] bg-primary-white text-primary-black rounded-[2rem] border border-primary-black -translate-y-8 ml-16 flex items-center justify-center">
-              </div>
+        <div className="flex flex-col m-8 gap-y-8">
+          <h1 className="text-[72px] text-center">RSURYA99</h1>
+          {/* <div className="relative w-full">
+            <div className="absolute top-[2px] left-[2px] z-10 w-[1006px] h-[59px] bg-primary-white text-lg text-primary-black rounded-[2rem] border border-primary-black flex items-center justify-center">
+              <span>{latestStream?.Title.title[0].plain_text}</span>
             </div>
-          </div>
-          <div className="inline-block w-[359px] h-[509px] ml-8 bg-[#282828] border-2 border-white rounded-[1.5rem] shadow-xl">
-            <div className="relative">
-              <div className="absolute top-[2px] left-[2px] z-10 w-[101px] h-[50px] bg-primary-white text-primary-black rounded-[2rem] border border-primary-black -translate-y-8 ml-12 flex items-center justify-center">
-                <span>Chat</span>
-              </div>
-              <div className="w-[105px] h-[54px] bg-primary-white text-primary-black rounded-[2rem] border border-primary-black -translate-y-8 ml-12 flex items-center justify-center">
-              </div>
+            <div className="w-[1010px] h-[64px] bg-primary-white text-primary-black rounded-[2rem] border border-primary-black">
+            </div>
+          </div> */}
+          <div className="inline-block w-[1009px] h-[567px] bg-[#00ff00] border-2 border-white rounded-[1.5rem] shadow-xl"></div>
+          <div className="inline-block w-[1009px] h-[567px] bg-[#00ff00] border-2 border-white rounded-[1.5rem] shadow-xl"></div>
+          <div className="detail space-y-6">
+            <div className="relative w-full h-[55px] bg-[#0E0E0E] bg-opacity-75 border-2 border-primary-white rounded-[2rem] flex items-center justify-center text-center shadow-md overflow-hidden">
+              <span className="whitespace-nowrap text-sm">
+                {latestStream?.Subtitle?.rich_text[0]?.plain_text ||
+                  "No Subtitles"}
+              </span>
+            </div>
+            <div className="relative w-full h-[55px] bg-[#0E0E0E] bg-opacity-75 border-2 border-primary-white rounded-[2rem] flex items-center justify-center text-center shadow-md overflow-hidden">
+              <span className="whitespace-nowrap text-sm animate-marquee">
+                Sultan Arab Rp. 5.000, Anonymous Rp. 5.000
+              </span>
             </div>
           </div>
         </div>
-        <section className="relative bottom flex items-center space-x-32 ml-14 mt-3">
+        <div className="absolute bottom-[500px] -left-[100px] scale-x-[-1]">
+          <Image src={Dino}
+            alt="Dino"
+            layout="fixed"
+            quality={100}
+            width={227}
+            height={246}
+          />
+        </div>
+        <section className="hidden relative bottom items-center space-x-32 ml-14 mt-3">
           <h1 className="text-[72px]">RSURYA99</h1>
           <div className="detail">
             <div className="relative w-[650px] h-[55px] bg-[#0E0E0E] bg-opacity-75 border-2 border-primary-white rounded-[2rem] flex items-center justify-center text-center shadow-md overflow-hidden">
@@ -90,7 +104,7 @@ const Osu: NextPage<Props> = (props) => {
           </div>
           <div className="absolute -top-[295px] -right-[155px]">
             <Image src={Dino}
-              alt="Cloud Right"
+              alt="Dino"
               layout="fixed"
               quality={100}
               width={379}
@@ -103,4 +117,4 @@ const Osu: NextPage<Props> = (props) => {
   )
 }
 
-export default Osu
+export default PotraitOsu
